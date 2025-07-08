@@ -28,7 +28,7 @@
             background: linear-gradient(135deg, #ff006e, #8338ec, #3a86ff);
             color: white;
             overflow: hidden;
-            cursor: url('hammer.png') 16 16, auto;
+            cursor: url('image/hammer.png') 16 16, auto;
             user-select: none;
             -webkit-user-select: none;
             -moz-user-select: none;
@@ -36,7 +36,7 @@
         }
 
         body.hammer-down {
-            cursor: url('hammer-down.png') 16 16, auto;
+            cursor: url('image/hammer-down.png') 16 16, auto;
         }
 
         .screen {
@@ -56,11 +56,11 @@
         }
 
         .screen.lobby {
-            background: url('lobby-bg.webp') center/cover, linear-gradient(135deg, #ff006e, #8338ec);
+            background: url('image/lobby-bg.webp') center/cover, linear-gradient(135deg, #ff006e, #8338ec);
         }
 
         .screen.game {
-            background: url('game-bg.webp') center/cover, linear-gradient(135deg, #3a86ff, #8338ec);
+            background: url('image/game-bg.webp') center/cover, linear-gradient(135deg, #3a86ff, #8338ec);
         }
 
         .logo {
@@ -178,7 +178,7 @@
         .hole {
             width: 120px;
             height: 120px;
-            background: url('hole.png') center/cover, radial-gradient(circle, #1a1a1a, #000);
+            background: url('image/hole.png') center/cover, radial-gradient(circle, #1a1a1a, #000);
             border-radius: 50%;
             position: relative;
             border: 3px solid #333;
@@ -209,22 +209,22 @@
         }
 
         .proof1 {
-            background: url('proof1.png') center/cover, linear-gradient(45deg, #ff006e, #ff4081);
+            background: url('image/proof1.png') center/cover, linear-gradient(45deg, #ff006e, #ff4081);
             border: 3px solid #ff4081;
         }
 
         .proof2 {
-            background: url('proof2.png') center/cover, linear-gradient(45deg, #8338ec, #ab47bc);
+            background: url('image/proof2.png') center/cover, linear-gradient(45deg, #8338ec, #ab47bc);
             border: 3px solid #ab47bc;
         }
 
         .proof3 {
-            background: url('proof3.png') center/cover, linear-gradient(45deg, #3a86ff, #42a5f5);
+            background: url('image/proof3.png') center/cover, linear-gradient(45deg, #3a86ff, #42a5f5);
             border: 3px solid #42a5f5;
         }
 
         .decoy {
-            background: url('decoy.png') center/cover, linear-gradient(45deg, #f44336, #ff5722);
+            background: url('image/decoy.png') center/cover, linear-gradient(45deg, #f44336, #ff5722);
             border: 3px solid #ff5722;
         }
 
@@ -410,6 +410,10 @@
                 font-size: 2.5rem;
             }
             
+            .screen.lobby img {
+                max-width: 300px !important;
+            }
+            
             .game-ui {
                 padding: 0 1rem;
                 height: 70px;
@@ -456,6 +460,10 @@
                 font-size: 2rem;
             }
             
+            .screen.lobby img {
+                max-width: 250px !important;
+            }
+            
             .menu-button {
                 padding: 0.8rem 1.5rem;
                 font-size: 1rem;
@@ -480,27 +488,27 @@
 <body>
     <!-- Audio Elements -->
     <audio id="lobbyMusic" loop>
-        <source src="lobby-music.mp3" type="audio/mpeg">
+        <source src="sounds/lobby-music.mp3" type="audio/mpeg">
     </audio>
     <audio id="gameMusic" loop>
-        <source src="game-music.mp3" type="audio/mpeg">
+        <source src="sounds/game-music.mp3" type="audio/mpeg">
     </audio>
     <audio id="hitSound">
-        <source src="hit.mp3" type="audio/mpeg">
+        <source src="sounds/hit.mp3" type="audio/mpeg">
     </audio>
     <audio id="missSound">
-        <source src="miss.mp3" type="audio/mpeg">
+        <source src="sounds/miss.mp3" type="audio/mpeg">
     </audio>
     <audio id="levelUpSound">
-        <source src="level-up.mp3" type="audio/mpeg">
+        <source src="sounds/level-up.mp3" type="audio/mpeg">
     </audio>
     <audio id="gameOverSound">
-        <source src="game-over.mp3" type="audio/mpeg">
+        <source src="sounds/game-over.mp3" type="audio/mpeg">
     </audio>
 
     <!-- Lobby Screen -->
     <div class="screen lobby active" id="lobbyScreen">
-        <div class="logo">WHAC-A-PROOF</div>
+        <img src="image/logo.webp" alt="Whac-A-Proof: Succinct Edition" style="max-width: 400px; width: 80%; margin-bottom: 2rem; filter: drop-shadow(0 0 20px rgba(255, 0, 110, 0.5));">
         <div class="logo" style="font-size: 2rem; margin-bottom: 3rem;">Succinct Edition</div>
         <button class="menu-button" onclick="showMenu()">Start Game</button>
         <button class="menu-button" onclick="showSettings()">Settings</button>
